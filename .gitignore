@@ -19,6 +19,7 @@ dist/
 Thumbs.db
 desktop.ini
 .DS_Store
+*.csv
 
 # Git Merge Backups
 *.bak
