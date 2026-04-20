@@ -6,5 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "keyboard>=0.13.5",
+    "numpy>=2.4.4",
+    "pandas>=3.0.2",
     "pyserial>=3.5",
 ]

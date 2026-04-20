@@ -51,13 +51,13 @@ def main():
                         parts = line.split(',')
                         raw_val = parts[0].split(':')[1]
                         voltage_val = parts[1].split(':')[1]
-                        filtered_val = parts[1].split(':')[1]
+                        filtered_val = parts[2].split(':')[1]
                         
                         writer.writerow([utc_now, raw_val, voltage_val, filtered_val, event_flag])
                         
                     except IndexError:
                         # Fallback if the serial line is garbled or booting up
-                        writer.writerow([utc_now, line, '', event_flag])
+                        writer.writerow([utc_now, line, '', '', event_flag])
 
         except KeyboardInterrupt:
             print("\nLogging stopped by user.")

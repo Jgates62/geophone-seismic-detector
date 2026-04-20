@@ -45,8 +45,9 @@ void loop() {
   // Output to Serial Plotter for visual detection
   Serial.print("Raw:");
   Serial.print(results);
-  Serial.print(",");
-  Serial.print("Voltage:");
-  Serial.println(voltage, 6);
+  Serial.print(",Voltage:");
+  Serial.print(voltage, 6);
+  Serial.print(",Filtered:");
+  Serial.println(filteredSignal, 6);
 
 }
