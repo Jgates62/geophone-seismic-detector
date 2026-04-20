@@ -29,7 +29,7 @@ def main():
         writer = csv.writer(csv_file)
         
         # Write headers
-        writer.writerow(['UTC_Timestamp', 'Raw_Value', 'Voltage', 'Event_Flag'])
+        writer.writerow(['UTC_Timestamp', 'Raw_Value', 'Voltage', 'Filtered', 'Event_Flag'])
 
         try:
             # Flush any incomplete data currently in the serial buffer
@@ -51,8 +51,9 @@ def main():
                         parts = line.split(',')
                         raw_val = parts[0].split(':')[1]
                         voltage_val = parts[1].split(':')[1]
+                        filtered_val = parts[1].split(':')[1]
                         
-                        writer.writerow([utc_now, raw_val, voltage_val, event_flag])
+                        writer.writerow([utc_now, raw_val, voltage_val, filtered_val, event_flag])
                         
                     except IndexError:
                         # Fallback if the serial line is garbled or booting up
