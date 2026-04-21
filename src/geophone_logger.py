@@ -34,6 +34,9 @@ def main():
         try:
             # Flush any incomplete data currently in the serial buffer
             ser.reset_input_buffer() 
+
+            # Read and discard the very first (potentially partial) line
+            ser.readline()
             
             while True:
                 if ser.in_waiting > 0:
